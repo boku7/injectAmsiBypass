@@ -1,6 +1,9 @@
 ## Cobalt Strike BOF - Inject AMSI Bypass
 Cobalt Strike Beacon Object File (BOF) that bypasses AMSI in a remote process with code injection.
 
+#### Running inject-amsiBypass BOF from CobaltStrike 
+  ![](runningBof.png)
+
 ### What does this do?
 ##### 1. Use supplied PID to get a handle on a remote process
 ```c
@@ -25,9 +28,6 @@ BOOL success = KERNEL32$WriteProcessMemory(hProc, amsiOpenSessAddr, (PVOID)amsib
 ### Proof of Concept Demo Screenshots
 #### Before - Powershell.exe AMSI.AmsiOpenSession
   ![](Before-AmsiOpenSession.png)
-
-#### Running inject-amsiBypass BOF from CobaltStrike 
-  ![](runningBof.png)
 
 #### After - Powershell.exe AMSI.AmsiOpenSession
   ![](After-AmsiOpenSession.png)
