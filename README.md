@@ -40,6 +40,7 @@ x86_64-w64-mingw32-gcc -c inject-amsiBypass.c -o inject-amsiBypass.o
 ```bash
 beacon> inject-amsiBypass <PID>
 ```
++ Make sure to load the inject-amsiBypass.cna script into Cobalt Strikes Script Manager
 
 ### To Do List
 + Check that AMSI.DLL exists in remote process before injection
