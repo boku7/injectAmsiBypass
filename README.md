@@ -5,7 +5,7 @@ Cobalt Strike Beacon Object File (BOF) that bypasses AMSI in a remote process wi
   ![](runningBof.png)
 
 ### What does this do?
-##### 1. Use supplied PID to get a handle on a remote process
+##### 1. Use supplied PID argument to get a handle on the remote process
 ```c
 hProc = KERNEL32$OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_WRITE, FALSE, (DWORD)pid);
 ```
