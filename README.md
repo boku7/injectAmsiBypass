@@ -27,7 +27,7 @@ BOOL success = KERNEL32$WriteProcessMemory(hProc, amsiOpenSessAddr, (PVOID)amsib
 
 ### Proof of Concept Demo Screenshots
 #### Before - Powershell.exe AMSI.AmsiOpenSession
-  ![](Before-AmsiOpenSession.png)
+  ![](Before-Amsi-OpenSession.png)
 
 #### After - Powershell.exe AMSI.AmsiOpenSession
   ![](After-AmsiOpenSession.png)
